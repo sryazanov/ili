@@ -53,7 +53,7 @@ Scene3D.prototype = Object.create(null, {
             result.backgroundColor = this.backgroundColor;
             result.spotBorder = this.spotBorder;
             result.colorMap = this.colorMap;
-          	result.rotation.copy(this.rotation);
+            result.rotation.copy(this.rotation);
             var geometry = new THREE.BufferGeometry();
             for (var i in this.geometry.attributes) {
                 var a = this.geometry.attributes[i];
@@ -233,7 +233,6 @@ Scene3D.prototype = Object.create(null, {
                 this._mesh = new THREE.Mesh(geometry, this._meshMaterial);
                 this._mesh.position.copy(geometry.boundingBox.center().negate());
                 this._meshContainer.add(this._mesh);
-                this._applyRotation();
                 this._recolor();
             } else {
                 this._mesh = null;
